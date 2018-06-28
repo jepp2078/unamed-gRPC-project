@@ -13,3 +13,6 @@
 
 # Vendor folder
 vendor/
+
+# IDE folder
+.idea/
