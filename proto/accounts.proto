@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package account;
+
+option go_package = "github.com/Jepp2078/myprotos/account";
+
+// Interface exported by the server.
+service Accounts {
+    //Get Account details
+    rpc GetAccount(AccountID) returns (Account) {}
+
+    //Get AuthObject details
+    rpc GetAuthObject(AccountID) returns (AuthObject) {}
+}
+
+message AccountID {
+    string id = 1;
+}
+
+message Account {
+    string id = 1;
+    string username = 2;
+    string password = 3;
+    string email = 4;
+}
+
+message AuthObject {
+    string token = 1;
+    int64 issuedAt = 2;
+    int64 validUntill = 3;
+}
